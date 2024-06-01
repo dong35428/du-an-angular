@@ -1,0 +1,88 @@
+<main>
+    <div class="container">
+        <div class="row mt-5 ">
+            <div class="col-md-5">
+                <img src="{{data.image}}" alt="" width="100%">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="thongtin text-dark ">
+                    <p>Trang chủ /{{data.loai}}/{{data.nameSP}}</p>
+                </div>
+                <div class="chitiet">
+                    <h2>{{data.nameSP}}</h2>
+                    <h2><span class="text-danger ">{{data.priceSP |currency : '':0 }} VNĐ</span> <del>{{data.priceCu
+                            |currency : '':0 }} VNĐ</del> <span
+                            class="btn btn-danger ">{{100-((data.priceSP*100)/data.priceCu)| currency :'':0}}%</span>
+                    </h2>
+                    <p class="mt-3 " style="min-height: 400px;">{{data.chitiet}}</p>
+                </div>
+                <div class="row">
+                    <button class="btn btn-warning p-4 fw-bold text-light  " ng-click="addCart(data)">THÊM VÀO GIỎ HÀNG</button>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row mt-5">
+            <h3 class="text-center ">Mô tả</h3>
+            <p>
+                {{data.mota}}
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="">
+                    <p> Chanel Bleu de Chanel Eau de parfum với nét sang trọng, lịch lãm toát ra từ thiết kế của
+                        chai,
+                        với
+                        thân chai màu xanh xám mạnh mẽ, cùng với các đường viền thanh lịch càng tôn lên sự quý phái
+                        của
+                        chai
+                        nước hoa, như một viên sha-phia lấp lánh.</p>
+                </div>
+            </div>
+            <button class="btn btn-dark w-25 text-center m-auto mt-5 rounded-0  " type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
+                aria-controls="collapseExample">Xem Thêm</button>
+
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <h1 class="text-danger ">SẢN PHẨM TƯƠNG TỰ</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 " ng-repeat="value in listSP 
+                        | limitTo: 6
+                        |  filter: {
+                            nameSP: tenSP,
+                            loai: tenDM
+                            
+                        }">
+                            <div class="card border-0 ">
+                                <!-- Sale badge -->
+                                <div class="sale-badge">{{100-((value.priceSP*100)/value.priceCu)| currency :'':0}}%
+                                </div>
+                                <!-- Product image -->
+                                <a class="text-decoration-none " href="#!/chitiet/{{value.id}}"><img src="{{value.image}}"
+                                        class="card-img-top" alt="Product Image"
+                                        style="width: 100%; min-height: 200px;"></a>
+                                <div class="card-body">
+                                    <!-- Product name -->
+                                    <a class="text-decoration-none text-black " href="#!/chitiet/{{value.id}}">
+                                        <p class="card-title fw-bold ">{{value.nameSP}}</p>
+                                        <input type="text" hidden value="{{value.loai}}">
+                                    </a>
+                                    <!-- Product price -->
+                                    <h5 class="card-text text-danger  ">{{value.priceSP | currency:'':0 }} VNĐ</h5>
+                                    <p class="text-dark "><del>{{value.priceCu | currency:'':0 }} VNĐ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                <button class="mt-2 border-0 bg-white rounded-0   "><a class="btn btn-warning " href="cuahang.html">Xem
+                        Thêm</a></button>
+            </div>
+
+
+        </div>
+    </div>
+</main>

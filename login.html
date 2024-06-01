@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="lib/all.min.css">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/style.css">
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <header class="container">
+            <div class="col-md-12 col-ms-12">
+                <nav class="navbar navbar-expand-lg " style="background-color: rgb(255, 255, 255); max-height: 70px;">
+                    <div class="container-fluid">
+                        <a class="navbar-brand mr-3 custom-hover" href="user/index.html">
+                            <img src="./duan/banner/Untitled-233.png" alt="" width="70px">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+
+                                <li class="nav-item mr">
+                                    <a class="nav-link active custom-hover " aria-current="page" href="user/index.html"
+                                        style="font-size: 20px; font-weight: 450px;">Cửa Hàng</a>
+                                </li>
+                                <li class="nav-item mr">
+                                    <a class="nav-link active custom-hover " aria-current="page" href="user/index.html"
+                                        style="font-size: 20px; font-weight: 450px;">Sale</a>
+                                </li>
+                                <li class="nav-item mr">
+                                    <a class="nav-link active custom-hover " aria-current="page" href="nhanhieu.html"
+                                        style="font-size: 20px; font-weight: 450px;">Nhãn Hiệu</a>
+                                </li>
+                                <li class="nav-item mr">
+                                    <a class="nav-link active custom-hover " aria-current="page" href="blog.html"
+                                        style="font-size: 20px; font-weight: 450px;">Blog</a>
+                                </li>
+
+                            </ul>
+                            <form class="form-inline border-2 ">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm" aria-label="Tìm kiếm"
+                                        aria-describedby="button-addon2">
+
+                                    <button class="btn btn-dark " type="button" id="button-addon2">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+
+                                </div>
+                            </form>
+                            <div class="dangnhap">
+                                <a class="btn btn-group-vertical  ml   " href="dangnhap.html">Đăng nhập | Đăng kí</a>
+                            </div>
+                            <div class="cart">
+                                <a class="btn btn-group-vertical ml" href="dangnhap.html"><i
+                                        class="fa-solid fa-cart-shopping" style="height: 30px ;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <hr>
+
+        <main>
+            <div class="container">
+                <h1 class="text-center ">ĐĂNG NHẬP</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="taikhoan">Tài khoản</label>
+                        <input type="text" class="form-control bg-black-input" name="username" id="username"
+                            placeholder="Nhập tài khoản" ng-model="username">
+                        <!-- <span class="text-danger" ng-show="validate.username">Tài khoản không được để trống</span> -->
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control bg-black-input" name="password" id="password"
+                            placeholder="Nhập mật khẩu" ng-model="password">
+                        <!-- <span class="text-danger" ng-show="validate.password">Mật khẩu không được để trống</span> -->
+
+                    </div>
+                    <br>
+                    <a href="" class="text-black  text-decoration-none">Quên mật khẩu?</a>
+                    <button class="btn btn-warning fw-bold w-100 text-center mt-3" ng-click="login()">Đăng
+                        nhập</button>
+                </form>
+                <div class="text-center mt-3">
+                    <span class="text-secondary">Hoặc đăng nhập bằng</span>
+                    <div class="col-4  text-center m-auto mt-4 ">
+                        <span class="d-inline-block " tabindex="0" data-bs-toggle="tooltip" data-bs-title="Facebook">
+                            <i class="fa-brands fa-facebook" style="margin-left: 10px; height: 30px;"></i>
+                        </span>
+                        <span class="d-inline-block " tabindex="0" data-bs-toggle="tooltip" data-bs-title="Youtobe"
+                            style="margin-left: 10px;">
+                            <i class="fa-brands fa-youtube" style="margin-left: 10px; height: 30px;"></i>
+                        </span>
+                        <span class="d-inline-block " tabindex="0" data-bs-toggle="tooltip" data-bs-title="Twitter"
+                            style="margin-left: 10px;">
+                            <i class="fa-brands fa-twitter" style="margin-left: 10px; height: 30px;"></i>
+                        </span>
+                    </div>
+                    <span class="mt-5">Chưa có tài khoản
+                        <a class="text-decoration-none text-warning " href="register.html">Đăng kí ngay </a>
+                    </span></span>
+
+                </div>
+        </main>
+
+
+        <footer class="footer  bottom-0  bg-black   text-white p-3  mt-5 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 "></div>
+                    <div class="col-4  text-center m-auto ">
+                        <span class="d-inline-block " tabindex="0" data-bs-toggle="tooltip" data-bs-title="Facebook">
+                            <i class="fa-brands fa-facebook" style="margin-left: 10px; height: 30px;"></i>
+                        </span>
+                        <span class="d-inline-block " tabindex="0" data-bs-toggle="tooltip" data-bs-title="Youtobe"
+                            style="margin-left: 10px;">
+                            <i class="fa-brands fa-youtube" style="margin-left: 10px; height: 30px;"></i>
+                        </span>
+                        <span class="d-inline-block " tabindex="0" data-bs-toggle="tooltip" data-bs-title="Twitter"
+                            style="margin-left: 10px;">
+                            <i class="fa-brands fa-twitter" style="margin-left: 10px; height: 30px;"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="row mt-3 ">
+                    <div class="col-3">
+                        <img src="duan/banner/Untitled-233.png" alt="banner" width="200px">
+                    </div>
+                    <div class="col-3">
+                        <h5>HỆ THỐNG SHOWROM</h5>
+                        <p>SHOWROOM 1: 70 Tuệ Tĩnh, Hai Bà Trưng, Hà Nội
+                            [ Sát ngã tư Bà Triệu - Tuệ Tĩnh ]
+                            SHOWROOM 2: 33 CMT 8 , P. Bến Thành, Q.1, HCM
+                            GIỜ HOẠT ĐỘNG: 9h – 21h30 ( cả T7, CN )</p>
+                    </div>
+                    <div class="col-3">
+                        <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                        <p>Cách thức mua hàng</p>
+                        <p> Chính sách bảo mật</p>
+                        <p>Chính sách bảo hành và đổi hàng</p>
+                    </div>
+                    <div class="col-3">
+                        <h5> VỀ CHÚNG TÔI</h5>
+                        <p>Giới Thiệu</p>
+                        <p> Hệ Thống Showrom</p>
+                        <p> Liên Hệ</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <!-- js -->
+    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script src="lib/all.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+
+    <script>
+        // Kích hoạt tooltip
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        var myApp = angular.module("myApp", [])
+        myApp.controller("myController", function ($scope, $http) {
+            var api = "http://localhost:3000/users/"
+            $scope.username = ""
+            $scope.password = ""
+
+         
+            $scope.login = function () {
+
+                if ($scope.username == "" || $scope.password == "") {
+                    alert("Tài khoản hoặc mật khẩu không được để trống")
+                }
+                else {
+                    $http.get(api + "?username=" + $scope.username + "&password=" + $scope.password)
+                        .then(function (response) {
+
+                            if (response.data.length == 0)
+                                alert("Sai Username hoặc Password")
+                            else if (response.data[0].role == "1") {
+                                //luu thông tin người đăng nhâpk
+                                localStorage.setItem("id", response.data[0].id)
+                                localStorage.setItem("name", response.data[0].name)
+                                window.location.href = "admin/index.html"
+                            }
+                            else if (response.data[0].role == "2") {
+                                //luu thông tin người đăng nhâpk
+                                localStorage.setItem("id", response.data[0].id)
+                                localStorage.setItem("name", response.data[0].name)
+                                window.location.href = "user/index.html"
+                            }
+                            
+                        })
+
+                }
+
+
+            }
+        })
+    </script>
+</body>
+
+</html>

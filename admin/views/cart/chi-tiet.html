@@ -1,0 +1,76 @@
+<h3 class="mx-4 mt-4 mb-3">Thông tin đơn hàng</h3>
+<table class="table table-bordered ">
+    <tr>
+        <th>ID</th>
+        <td>{{ data.id}}</td>
+    <tr>
+    <tr>
+        <th style="width: 260px;">Tổng sản phẩm</th>
+        <td>
+            <div class="accordion" id="accordionExample" disabled>
+                <div class="accordion-item">
+                    <table class="table table-bordered ">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Ảnh</th>
+                                <th style="width: 30%;">Tên sản phẩm</th>
+                                <th>Giá sản phẩm</th>
+                                <th>Số lượng </th>
+                                <th>Tổng tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="(index, value) in data.order">
+                                <td> {{ value.idDH }}</td>
+                                <td>
+                                    <div class="border rounded bg-light d-flex justify-content-center overflow-hidden align-items-center "
+                                        style="width: 80px ;height: 80px;">
+                                        <img ng-src="{{ value.anhDH }}" alt="" class="mh-100 mw-100">
+                                    </div>
+                                </td>
+                                <td>{{value.tenDH}}</td>
+                                <td>{{ value.giaTienDH | number }} VND</td>
+                                <td>{{ value.soluongDH }}</td>
+                                <td>{{ value.thanhTienDH | number }} VND</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  
+                </div>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>Thành tiền</th>
+        <td>{{ data.tongTien | number }} vnđ</td>
+    </tr>
+    <tr>
+        <th>Ngày đặt hàng</th>
+        <td>{{ data.ngayDatHang | date:'dd/MM/yyyy HH:mm' }}</td>
+    </tr>
+    <tr>
+        <th>Ghi chú đơn hàng</th>
+        <td>{{ data.ghichu }}</td>
+    </tr>
+    <tr>
+        <th>Tên người nhận</th>
+        <td>{{ data.userInfo.username }}</td>
+    </tr>
+    <tr>
+        <th>Số điện thoại nhận hàng</th>
+        <td>{{ data.userInfo.phone }}</td>
+    </tr>
+    <tr>
+        <th>Địa chỉ nhận hàng</th>
+        <td>{{ data.diachi }}</td>
+    <tr>
+        <th>Trạng thái</th>
+        <td><span>{{ data.trangThai }}</span></td>
+    </tr>
+</table>
+<div class="d-flex justify-content-center">
+    <a type="button" href="#!/list-cart" class="btn btn-secondary mx-2"><i class="fa-solid fa-arrow-left"></i> Quay
+        lại</a>
+</div>

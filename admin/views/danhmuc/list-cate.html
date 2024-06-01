@@ -1,0 +1,43 @@
+<div class="input-group ">
+    <h1>Danh sách</h1>
+    <form class="form-inline border-2 mt-3" style="margin-left: 400px;">
+        <div class="input-group">
+            <input type="text " class="form-control" placeholder="Tìm kiếm" aria-label="Tìm kiếm"
+                aria-describedby="button-addon2">
+
+            <button class="btn btn-dark " type="button" id="button-addon2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
+    </form>
+
+</div>
+<a href="#!/add-cate" class="btn btn-info mt-3 ">
+    <h3>Thêm danh mục</h3>
+</a>
+<div class="row p-3 ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tên danh mục</th>
+                <th scope="col">Thao tác</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(index,value) in listCate">
+                <th scope="row">{{index+1}}</th>
+                <td>{{value.nameDM}}</td>
+                <td>
+                    <a href="#!/update-cate/{{value.id}}" class="btn btn-warning ">Sửa</a>
+                    <button class="btn btn-danger " ng-click="delCate(value.id)">
+                        Xóa
+                    </button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

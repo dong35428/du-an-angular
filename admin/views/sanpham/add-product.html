@@ -1,0 +1,64 @@
+<h1 class="text-center mt-3  ">Thêm sản phẩm</h1>
+<form action="" class="mt-5 ">
+    <div class="row mb-3">
+        <label for="" class="col-2 col-form-label">Người tạo sản phẩm:</label>
+        <div class="col-8">
+            <input type="text" class="form-control" hidden id="nguoitao" ng-model="data.nguoiTao"
+                >
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="" class="col-2 col-form-label">Tên sản phẩm:</label>
+        <div class="col-8">
+            <input type="text" class="form-control" id="inputEmail3" ng-model="data.nameSP">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="" class="col-2 col-form-label">Giá cũ sản phẩm:</label>
+        <div class="col-8">
+            <input type="text" class="form-control" id="inputEmail3" ng-model="data.priceCu">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="" class="col-2 col-form-label">Giá sản phẩm:</label>
+        <div class="col-8">
+            <input type="text" class="form-control" id="inputEmail3" ng-model="data.priceSP">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="" class="col-2 col-form-label">Ảnh sản phẩm:</label>
+        <div class="col-8">
+            <input type="text" class="form-control" id="image" ng-model="data.image">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="" class="col-2 col-form-label">Chi tiết:</label>
+        <div class="col-8">
+            <input type="" class="form-control" id="inputEmail3" style="height: 150px;" ng-model="data.chitiet">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="" class="col-2 col-form-label">Mô tả:</label>
+        <div class="col-8">
+            <input type="" class="form-control" id="inputEmail3" style="height: 150px;" ng-model="data.mota">
+        </div>
+    </div>
+    <div class="row">
+        <label for="" class="col-2 col-form-label">Loại</label>
+        <div class="col-8">
+            <select name="category" ng-model="data.loai">
+                <option value="" hidden>--Chọn loại--</option>
+                <option ng-repeat="value in listDM" value="{{value.id}}">{{value.nameDM}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <button class="btn btn-primary" ng-click="submit()">Thêm mới</button>
+            <button class="btn btn-warning "><a class="text-decoration-none text-light " href="#!/list-product">Danh
+                    sách</a></button>
+        </div>
+    </div>
+
+</form>

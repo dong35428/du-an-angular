@@ -1,0 +1,24 @@
+<h1>Đơn hàng của tôi</h1>
+<table class="table border mt-3 " style="height: 70vh; ">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Tên đơn hàng</th>
+      <th>Trạng thái</th>
+      <th>Ngày đặt</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="(index, value) in listA">
+        <th scope="row">{{index +1}}</th>
+        <td>{{value.order[0].tenDH}}</td>
+        <td>{{value.trangThai}}</td>
+        <td>{{ value.ngayDatHang | date:'dd/MM/yyyy HH:mm' }}</td>
+        <th>
+          <a href="#!/chitiet-cart/{{ value.id }}"><button class="btn btn-warning ">Xem chi tiết</button></a>
+          
+        </th>
+    </tr>
+  </tbody>
+</table>

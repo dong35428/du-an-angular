@@ -1,0 +1,63 @@
+<div ng-controller="header">
+
+    <header class="container">
+        <div class="col-md-12 col-ms-12">
+            <nav class="navbar navbar-expand-lg " style="background-color: rgb(255, 255, 255); max-height: 70px;">
+                <div class="container-fluid">
+                    <a class="navbar-brand mr-3 custom-hover" href="#!/">
+                        <img src="../duan/banner/Untitled-233.png" alt="" width="70px">
+                    </a>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item mr">
+                                <a class="nav-link active custom-hover " aria-current="page" href="#!/cuahang"
+                                    style="font-size: 20px; font-weight: 450px;">Cửa Hàng</a>
+                            </li>
+                            <li class="nav-item mr">
+                                <a class="nav-link active custom-hover " aria-current="page" href="#!/"
+                                    style="font-size: 20px; font-weight: 450px;">Sale</a>
+                            </li>
+                            <li class="nav-item mr">
+                                <a class="nav-link active custom-hover " aria-current="page" href="#!/"
+                                    style="font-size: 20px; font-weight: 450px;">Nhãn Hiệu</a>
+                            </li>
+                            <li class="nav-item mr">
+                                <a class="nav-link active custom-hover " aria-current="page" href="#!/"
+                                    style="font-size: 20px; font-weight: 450px;">Blog</a>
+                            </li>
+
+                        </ul>
+                        <form class="form-inline border-2 ">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm" aria-label="Tìm kiếm"
+                                    aria-describedby="button-addon2" ng-model="tenSP">
+                            </div>
+                        </form>
+                        <div class="dangnhap ml">
+                            <a class="btn btn-group-vertical   " href="/login.html"
+                                ng-show="indexAccount == ''">Đăng nhập | Đăng kí</a>
+                            <!-- <a class="btn btn-group-vertical  " href="dangnhap.html" ng-show="indexAccount != ''"><i class="fa-solid fa-user"></i>{{nameAccount}}</a> -->
+                            <li class="nav-item dropdown btn btn-danger  " ng-show="indexAccount != ''">
+                                <a class="btn btn-group-vertical"  role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    {{nameAccount}}
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
+                                    <li><a class="dropdown-item" href="#!/donhang/{{idAccount}}">Đơn hàng của bạn</a></li>
+                                    <li><a class="dropdown-item" href="#" ng-click="logout()">Đăng xuất</a></li>
+                                </ul>
+                            </li>
+
+                        </div>
+                        <div class="cart">
+                            <a class="btn btn-group-vertical " href="#!/giohang"><i class="fa-solid fa-cart-shopping"
+                                    style="height: 30px ;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <hr>
+</div>

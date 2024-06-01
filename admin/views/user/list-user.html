@@ -1,0 +1,63 @@
+<div class="input-group ">
+    <h1>Danh sách Use</h1>
+    <form class="form-inline border-2 mt-3" style="margin-left: 400px;">
+        <div class="input-group">
+            <input type="text " class="form-control" placeholder="Tìm kiếm" aria-label="Tìm kiếm"
+                aria-describedby="button-addon2">
+            <button class="btn btn-dark " type="button" id="button-addon2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
+    </form>
+</div>
+
+<div class="row p-3 ">
+    <table class="table text-center ">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tài khoản</th>
+                <th scope="col">Mật khẩu</th>
+                <th scope="col">Tên người dùng</th>
+                <th scope="col">Role</th>
+
+                <th scope="col">Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(index,value) in listUser">
+                <th>{{index+1}}</th>
+                <th>{{value.username}}</th>
+                <th>{{value.password}}</th>
+                <th>{{value.name}}</th>
+                <th>{{value.role}}</th>
+
+                <td>
+                    <button ng-click="delete(value.id)" class="btn btn-danger " data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Xóa</button>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Cảnh Báo</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có muốn xóa hay không
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger " ng-click="confimDelete()">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</div>

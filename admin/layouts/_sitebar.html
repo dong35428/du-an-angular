@@ -1,0 +1,45 @@
+<div ng-controller="sitebar">
+
+    <div class="nav-item text-center ">
+        <button class=" border-0 btn text-light  " style="font-size: 35px;"><i class="fa-solid fa-user"></i>
+            {{nameAccount}}</button>
+        <button class="btn btn-close-white text-light  " style="font-size: 30px;" ng-click="logout()">| Đăng
+            xuất</button>
+    </div>
+    <hr class="text-light ">
+    <h1 class="text-warning p-3">Quản lí</h1>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link active text-light " aria-current="page" href="#!/">
+                <h3>Trang chủ</h3>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light " href="#!/list-cate">
+                <h3>Danh mục sản phẩm</h3>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light " href="#!/list-product">
+                <h3>Danh sách sản phẩm</h3>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light " href="#!/list-user">
+                <h3>Quản lí User</h3>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light " href="#!/list-cart">
+                <h3>Quản lí đơn hàng</h3>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light " href="#">
+                <h3>Thông kê</h3>
+            </a>
+        </li>
+
+    </ul>
+
+</div>

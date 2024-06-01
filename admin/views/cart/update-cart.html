@@ -1,0 +1,29 @@
+<h1 class="text-danger text-center">UPDATE ĐƠN HÀNG</h1>
+<div class="form p-5 mt-2">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">ID đơn hàng</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" ng-model="data.id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Tài khoản đặt hàng</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" ng-model="data.userInfo.username" readonly>
+    </div>
+    
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Ngày đặt hàng</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" ng-model="data.ngayDatHang | date:'dd/MM/yyyy HH:mm' " readonly>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Trạng thái</label>
+        <select class="form-select justify-content-end" ng-model="data.trangThai">
+            <option value="Chưa xác nhận" >Chưa xác nhận</option>
+            <option value="Đang vận chuyển">Đang vận chuyển</option>
+            <option value="Đã giao hàng">Đã giao hàng</option>
+            <option value="Đã huỷ">Đã huỷ</option>
+        </select>
+    </div>
+    <div class="mb-3">
+       <button class="btn btn-primary " ng-click="update()">Chỉnh sửa</button> 
+       <a href="#!/list-cart"><button class="btn btn-secondary ">Quay lại</button></a>
+    </div>
+</div>

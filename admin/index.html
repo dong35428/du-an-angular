@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/all.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/style.css">
+</head>
+
+<body ng-app="myApp">
+    <div class="container-fluid p-0 ">
+        <div class="row">
+            <div class="col-md-3  p-0 bg-info  " style=" min-height: 100vh;">
+                <div ng-include="'layouts/_sitebar.html'"></div>
+            </div>
+            <div class="col-md-9 p-2 ">
+                <div ng-view>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.min.js"></script>
+
+    <!-- sản phẩm  -->
+    <script src="controllers/SanPham/ListProductController.js"></script>
+    <script src="controllers/SanPham/AddProductController.js"></script>
+    <script src="controllers/SanPham/UpdateProductController.js"></script>
+    <!-- danh mục  -->
+    <script src="controllers/DanhMuc/ListCategoryController.js"></script>
+    <script src="controllers/DanhMuc/AddCategoryController.js"></script>
+    <script src="controllers/DanhMuc/UpdateCategoryCotroller.js"></script>
+    <!-- user  -->
+    <script src="controllers/User/ListUserController.js"></script>
+    <!-- cart  -->
+    <script src="controllers/Cart/ListCartController.js"></script>
+    <script src="controllers/Cart/UpdateCotroller.js"></script>
+    <script src="controllers/Cart/ChitietController.js"></script>
+    <script>
+        var myApp = angular.module("myApp", ['ngRoute'])
+        myApp.config(function ($routeProvider) {
+            $routeProvider
+                //trang chủ
+                .when("/", {
+                    templateUrl: "views/home.html"
+                })
+                //danh sách san phẩm
+                .when("/list-product", {
+                    templateUrl: "views/sanpham/list-product.html",
+                    controller: ListProductController
+                })
+                //thêm sản phẩm
+                .when("/add-product", {
+                    templateUrl: "views/sanpham/add-product.html",
+                    controller: AddProductController
+                })
+                //sửa san phẩm
+                .when("/update-product/:id", {
+                    templateUrl: "views/sanpham/update-product.html",
+                    controller: UpdateProductController
+                })
+                //danh sách danh mục 
+                .when("/list-cate", {
+                    templateUrl: "views/danhmuc/list-cate.html",
+                    controller: ListCategoryController
+                })
+                //thêm danh mục 
+                .when("/add-cate", {
+                    templateUrl: "views/danhmuc/add-cate.html",
+                    controller: AddCategoryController
+                })
+                //sửa danh mục 
+                .when("/update-cate/:id", {
+                    templateUrl: "views/danhmuc/update-cate.html",
+                    controller: UpdateCategoryCotroller
+                })
+                //danh sách user
+                .when("/list-user",{
+                    templateUrl : "views/user/list-user.html",
+                    controller: ListUserController
+                })
+                //danh sách đơn hàng
+                .when("/list-cart",{
+                    templateUrl : "views/cart/list-cart.html",
+                    controller: ListCartController
+                })
+                //sửa đơn hàng
+                .when("/update-cart/:id",{
+                    templateUrl : "views/cart/update-cart.html",
+                    controller: UpdateCotroller
+                })
+                //chi tiết đơn hàng
+                .when("/chitiet-cart/:id",{
+                    templateUrl : "views/cart/chi-tiet.html",
+                    controller: ChitietController
+                })
+
+                //trnag trống 
+                .otherwise({
+                    redirectTo: "/"
+                })
+        })
+        function checkLogin() {
+            if (localStorage.getItem("name") == undefined)
+                window.location.href = "../login.html"
+        }
+        checkLogin()
+
+    </script>
+    <script src="controllers/SiteBarController.js"></script>
+    <script src="../lib/bootstrap.bundle.min.js"></script>
+    <script src="../lib/all.min.js"></script>
+
+</body>
+
+</html>

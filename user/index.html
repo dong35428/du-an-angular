@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/all.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/style.css">
+</head>
+
+<body ng-app="myApp">
+    <div ng-include="'layouts/_hearder.html'"></div>
+    <div ng-view></div>
+    <div ng-include="'layouts/_footer.html'"></div>
+
+    <!-- liên kết thư mục  -->
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.min.js"></script>
+
+    <!-- trang chủ  -->
+    <script src="controllers/HomeController.js"></script>
+    <!-- của hàng  -->
+    <script src="controllers/CuaHangController.js"></script>
+    <!-- Chi tiết  -->
+    <script src="controllers/ChiTietController.js"></script>
+    <!-- Giỏ hàng  -->
+    <script src="controllers/GioHangControlle.js"></script>
+    <!-- Thanh toán  -->
+    <script src="controllers/OrderController.js"></script>
+    <!-- đơn hàng của tôi  -->
+    <script src="controllers//DonhangController.js"></script>
+    <!-- chi tiêt đơn hàng  -->
+    <script src="controllers/ChitietDHController.js"></script>
+
+
+    <script>
+        var myApp = angular.module("myApp", ['ngRoute'])
+        myApp.config(function ($routeProvider) {
+            $routeProvider
+                //trang chủ
+                .when("/", {
+                    templateUrl: "view/home.html",
+                    controller: HomeController
+                })
+                .when("/cuahang",{
+                    templateUrl: "view/cuahang.html",
+                    controller: CuaHangController
+                })
+                .when("/chitiet/:id",{
+                    templateUrl: "view/chitiet.html",
+                    controller: ChiTietController
+                })
+                .when("/giohang",{
+                    templateUrl: "view/giohang.html",
+                    controller: GioHangControlle
+                })
+                .when("/order",{
+                    templateUrl: "view/order.html",
+                    controller: OrderController
+                })
+                .when("/donhang/:user",{
+                    templateUrl: "view/donhang.html",
+                    controller: DonhangController
+                })
+                .when("/chitiet-cart/:id",{
+                    templateUrl : "view/chitietdonhang.html",
+                    controller: ChitietDHController
+                })
+                
+                .otherwise({
+                    redirectTo: "/"
+                })
+            //danh sách san phẩm
+        })
+    </script>
+    <script src="controllers/HederController.js"></script>
+
+    <script src="../lib/bootstrap.bundle.min.js"></script>4
+    <script src="../lib/all.min.js"></script>
+
+</body>
+
+</html>

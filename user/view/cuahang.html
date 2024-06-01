@@ -1,0 +1,96 @@
+<main>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-2">
+                <div class="card mt-5 border-0 ">
+                    <div class="list-group-item  ">
+                        <h4>Danh mục</h4>
+                    </div>
+                    <!-- <ul class="list-group list-group-flush  " >
+                        <li class="list-group container-fluid   mt-3 " ng-repeat="value in listDM" >
+                            <a class="text-decoration-none text-black "  ng-model="tenDM"  href=""  value="{{value.id}}">{{value.nameDM}}</a>
+                        </li>
+                    </ul> -->
+                    <select ng-model="tenDM" class="form-control border-0" size="10">
+                        <option value="" hidden> --Chọn--</option>
+                        <option class="mt-3 " ng-repeat="value in listDM " value="{{value.id}}">{{value.nameDM}}
+                        </option>
+                    </select>
+
+                </div>
+                <hr class="mt-5 ">
+                <button class="btn btn-danger"><a class="btn btn-danger " href="sale.html">FLASH SALE</a></button>
+                <hr>
+                <label for="">Tùy chỉnh:</label>
+                <select name="" id="" ng-model="sortSalary">
+                    <option value="" hidden>--Sắp xếp theo giá --</option>
+                    <option value="+priceSP">Tăng dần</option>
+                    <option value="-priceSP">Giảm dần</option>
+                </select>
+
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-9 mt-5  " style="text-align: center;">
+                <div class="container ">
+                    <div class="row  ">
+                        <div class="col-md-3 " ng-repeat="value in listSP 
+                        | orderBy :sortSalary
+                        | limitTo: 12 
+                        |  filter: {
+                            nameSP: tenSP,
+                            loai: tenDM
+                            
+                        }">
+                            <div class="card border-0 ">
+                                <!-- Sale badge -->
+                                <div class="sale-badge">{{100-((value.priceSP*100)/value.priceCu)| currency :'':0}}%
+                                </div>
+                                <!-- Product image -->
+                                <a class="text-decoration-none " href="#!/chitiet/{{value.id}}"><img
+                                        src="{{value.image}}" class="card-img-top" alt="Product Image"
+                                        style="width: 100%; min-height: 300px;"></a>
+                                <div class="card-body">
+                                    <!-- Product name -->
+                                    <a class="text-decoration-none text-black " href="#!/chitiet/{{value.id}}">
+                                        <p class="card-title fw-bold ">{{value.nameSP}}</p>
+                                        <input type="text" hidden value="{{value.loai}}">
+                                    </a>
+                                    <!-- Product price -->
+                                    <h5 class="card-text text-danger  ">{{value.priceSP | currency:'':0 }} VNĐ</h5>
+                                    <p class="text-dark "><del>{{value.priceCu | currency:'':0 }} VNĐ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="mt-5  text-center " style="margin-left: 400px; margin-bottom: 50px;">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">..</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+</main>
